@@ -1,0 +1,23 @@
+{
+  "name": "caelcomex",
+  "version": "1.0.0",
+  "description": "Sitio web Cael Comex con panel de administración",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --env-file-if-exists=.env --watch server.js",
+    "importar-imagenes": "node --env-file-if-exists=.env scripts/importar-imagenes.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "compression": "^1.8.2",
+    "express": "^4.22.3",
+    "multer": "^2.5.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  },
+  "private": true
+}

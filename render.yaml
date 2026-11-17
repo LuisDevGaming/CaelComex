@@ -1,0 +1,22 @@
+# Configuración lista para Render.com (Blueprint). Crea el servicio web con disco persistente.
+services:
+  - type: web
+    name: caelcomex
+    runtime: docker
+    plan: starter            # el disco persistente requiere un plan pagado
+    healthCheckPath: /healthz
+    disk:
+      name: caelcomex-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /data
+      - key: SITE_URL
+        value: https://www.caelcomex.cl
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false          # Render te pedirá escribirla al crear el servicio
